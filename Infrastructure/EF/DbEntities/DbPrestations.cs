@@ -7,5 +7,4 @@ public class DbPrestations
     public int Travail { get; set; }
     public int Horaire { get; set; }
     public decimal SalaireNet { get; set; }
-    public string Notes { get; set; }
 }

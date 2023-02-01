@@ -53,7 +53,6 @@ public class DBContext : DbContext
             entity.Property(prestations => prestations.Travail).HasColumnName("travail");
             entity.Property(prestations => prestations.Horaire).HasColumnName("horaire");
             entity.Property(prestations => prestations.SalaireNet).HasColumnName("salaire_net");
-            entity.Property(prestations => prestations.Notes).HasColumnName("notes");
         });
     }
 }
