@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="OVH" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="OVH">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/Schedule.sln" web="/" />
+            <mapping local="$PROJECT_DIR$/API/API.csproj" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/Domain.csproj" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/Application.csproj" web="/" />
+            <mapping local="$PROJECT_DIR$/API/Controllers/TravailsControllers.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/Controllers/HorairesControllers.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/Controllers/PrestationsControllers.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/Properties/launchSettings.json" web="/" />
+            <mapping local="$PROJECT_DIR$/API/Program.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/appsettings.Development.json" web="/" />
+            <mapping local="$PROJECT_DIR$/API/appsettings.json" web="/" />
+            <mapping local="C:/Program Files/dotnet/sdk/6.0.405/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/API/ConnectionStringProvider.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/Prestations/IPrestationsRepository.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/Prestations/EfPrestationsRepository.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/Horaires/IHorairesRepository.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/Horaires/EfHorairesRepository.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/Travails/ITravailsRepository.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/Travails/EfTravailsRepository.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/DbEntities/DbHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/DbEntities/DbTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/DbEntities/DbPrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/DBContext.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/EF/DBContextProvider.cs" web="/" />
+            <mapping local="C:/Program Files/dotnet/sdk/6.0.405/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/IConnectionStringProvider.cs" web="/" />
+            <mapping local="C:/Program Files/dotnet/sdk/6.0.405/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/Horaires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/Travails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/Prestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Utils/IUseCaseQuery.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Utils/IUseCaseWriter.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Utils/IUseCaseParameterizedQuery.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/Dtos/DtoOutputPrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/Dtos/DtoInputCreatePrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/Dtos/DtoInputUpdatePrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/Dtos/DtoInputFilteringPrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseCreatePrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseDeletePrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseUpdatePrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseFetchAllPrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseFetchByIdPrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseFetchFilterPrestations.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/Dtos/DtoOutputHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/Dtos/DtoInputCreateHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/Dtos/DtoInputUpdateHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/Dtos/DtoInputFilteringHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/UseCaseCreateHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/UseCaseDeleteHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/UseCaseUpdateHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/UseCaseFetchAllHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/UseCaseFetchByIdHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Horaires/UseCaseFetchFilterHoraires.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/Dtos/DtoOutputTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/Dtos/DtoInputCreateTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/Dtos/DtoInputUpdateTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/Dtos/DtoInputFilteringTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/UseCaseCreateTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/UseCaseDeleteTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/UseCaseUpdateTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/UseCaseFetchAllTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/UseCaseFetchByIdTravails.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Travails/UseCaseFetchFilterTravails.cs" web="/" />
+            <mapping local="C:/Program Files/dotnet/sdk/6.0.405/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/Mapper.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/Dtos/DtoOutputNextPrestation.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseFetchNextPrestation.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/UseCaseFetchNextSalary.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/UseCases/Prestations/Dtos/DtoOutputNextSalary.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/obj/Release/net6.0/API.GlobalUsings.g.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/obj/Release/net6.0/API.AssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/API/obj/Release/net6.0/API.GeneratedMSBuildEditorConfig.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/obj/Release/net6.0/Infrastructure.GlobalUsings.g.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/obj/Release/net6.0/Infrastructure.AssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Infrastructure/obj/Release/net6.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/obj/Release/net6.0/Domain.GlobalUsings.g.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/obj/Release/net6.0/Domain.AssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Domain/obj/Release/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/obj/Release/net6.0/Application.GlobalUsings.g.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/obj/Release/net6.0/Application.AssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/Application/obj/Release/net6.0/Application.GeneratedMSBuildEditorConfig.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/API/Dockerfile" web="/" />
+            <mapping local="$PROJECT_DIR$/.dockerignore" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

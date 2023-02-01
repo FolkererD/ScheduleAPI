@@ -7,9 +7,10 @@ namespace Application.UseCases.Travails;
 public class UseCaseCreateTravails : IUseCaseWriter<DtoOutputTravails, DtoInputCreateTravails>
 {
     private readonly ITravailsRepository _travailsRepository;
+
     public UseCaseCreateTravails(ITravailsRepository TravailsRepository)
     {
-         _travailsRepository = TravailsRepository;
+        _travailsRepository = TravailsRepository;
     }
 
     public DtoOutputTravails Execute(DtoInputCreateTravails input)

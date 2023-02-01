@@ -7,9 +7,10 @@ namespace Application.UseCases.Prestations;
 public class UseCaseCreatePrestations : IUseCaseWriter<DtoOutputPrestations, DtoInputCreatePrestations>
 {
     private readonly IPrestationsRepository _prestationsRepository;
+
     public UseCaseCreatePrestations(IPrestationsRepository PrestationsRepository)
     {
-         _prestationsRepository = PrestationsRepository;
+        _prestationsRepository = PrestationsRepository;
     }
 
     public DtoOutputPrestations Execute(DtoInputCreatePrestations input)

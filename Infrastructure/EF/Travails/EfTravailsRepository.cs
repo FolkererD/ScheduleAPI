@@ -1,9 +1,9 @@
 using Domain;
 using Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
+
 public class EfTravailsRepository : ITravailsRepository
 {
-
     private readonly DBContextProvider _dbContextProvider;
 
     public EfTravailsRepository(DBContextProvider contextProvider)
@@ -67,5 +67,4 @@ public class EfTravailsRepository : ITravailsRepository
             return false;
         }
     }
-
 }

@@ -7,9 +7,10 @@ namespace Application.UseCases.Horaires;
 public class UseCaseCreateHoraires : IUseCaseWriter<DtoOutputHoraires, DtoInputCreateHoraires>
 {
     private readonly IHorairesRepository _horairesRepository;
+
     public UseCaseCreateHoraires(IHorairesRepository HorairesRepository)
     {
-         _horairesRepository = HorairesRepository;
+        _horairesRepository = HorairesRepository;
     }
 
     public DtoOutputHoraires Execute(DtoInputCreateHoraires input)

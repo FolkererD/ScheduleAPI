@@ -1,10 +1,10 @@
 using Api;
+using Application.UseCases.Horaires;
+using Application.UseCases.Prestations;
+using Application.UseCases.Travails;
 using Domain;
 using Infrastructure;
 using Infrastructure.EF;
-using Application.UseCases.Travails;
-using Application.UseCases.Horaires;
-using Application.UseCases.Prestations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,6 +49,8 @@ builder.Services.AddScoped<UseCaseCreatePrestations>();
 builder.Services.AddScoped<UseCaseUpdatePrestations>();
 builder.Services.AddScoped<UseCaseDeletePrestations>();
 builder.Services.AddScoped<UseCaseFetchAllPrestations>();
+builder.Services.AddScoped<UseCaseFetchNextPrestation>();
+builder.Services.AddScoped<UseCaseFetchNextSalary>();
 builder.Services.AddScoped<UseCaseFetchByIdPrestations>();
 builder.Services.AddScoped<UseCaseFetchFilterPrestations>();
 
@@ -56,7 +58,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("Dev", policyBuilder =>
     {
-        policyBuilder.WithOrigins ("http://localhost:4200")
+        policyBuilder.WithOrigins("http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -66,9 +68,16 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{ app.UseSwagger(); app.UseSwaggerUI(); }
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+    // On désactive le redirection
+    // A changer pour le SSL
+    app.UseHttpsRedirection();
+
 app.UseCors("Dev");
 app.UseAuthorization();
 app.MapControllers();

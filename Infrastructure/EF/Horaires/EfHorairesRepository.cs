@@ -1,9 +1,9 @@
 using Domain;
 using Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
+
 public class EfHorairesRepository : IHorairesRepository
 {
-
     private readonly DBContextProvider _dbContextProvider;
 
     public EfHorairesRepository(DBContextProvider contextProvider)
@@ -67,5 +67,4 @@ public class EfHorairesRepository : IHorairesRepository
             return false;
         }
     }
-
 }

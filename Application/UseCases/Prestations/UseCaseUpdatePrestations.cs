@@ -4,15 +4,16 @@ using Domain;
 
 namespace Application.UseCases.Prestations;
 
-public class UseCaseUpdatePrestations : IUseCaseWriter<Boolean, DtoInputUpdatePrestations>
+public class UseCaseUpdatePrestations : IUseCaseWriter<bool, DtoInputUpdatePrestations>
 {
     private readonly IPrestationsRepository _prestationsRepository;
+
     public UseCaseUpdatePrestations(IPrestationsRepository PrestationsRepository)
     {
-         _prestationsRepository = PrestationsRepository;
+        _prestationsRepository = PrestationsRepository;
     }
 
-    public Boolean Execute(DtoInputUpdatePrestations input)
+    public bool Execute(DtoInputUpdatePrestations input)
     {
         var mapper = Mapper.GetInstance();
         var prestations = mapper.Map<DbPrestations>(input);

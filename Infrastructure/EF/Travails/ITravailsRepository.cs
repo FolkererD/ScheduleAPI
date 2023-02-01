@@ -1,4 +1,5 @@
 namespace Domain;
+
 public interface ITravailsRepository
 {
     IEnumerable<DbTravails> FetchAll();

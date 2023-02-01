@@ -1,4 +1,5 @@
 namespace Domain;
+
 public interface IHorairesRepository
 {
     IEnumerable<DbHoraires> FetchAll();

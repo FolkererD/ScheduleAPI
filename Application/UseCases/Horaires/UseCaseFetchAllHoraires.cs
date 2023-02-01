@@ -7,9 +7,10 @@ namespace Application.UseCases.Horaires;
 public class UseCaseFetchAllHoraires : IUseCaseQuery<IEnumerable<DtoOutputHoraires>>
 {
     private readonly IHorairesRepository _horairesRepository;
+
     public UseCaseFetchAllHoraires(IHorairesRepository HorairesRepository)
     {
-         _horairesRepository = HorairesRepository;
+        _horairesRepository = HorairesRepository;
     }
 
     public IEnumerable<DtoOutputHoraires> Execute()

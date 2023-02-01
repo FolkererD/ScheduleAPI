@@ -7,9 +7,10 @@ namespace Application.UseCases.Horaires;
 public class UseCaseFetchByIdHoraires : IUseCaseParameterizedQuery<DtoOutputHoraires, int>
 {
     private readonly IHorairesRepository _horairesRepository;
+
     public UseCaseFetchByIdHoraires(IHorairesRepository HorairesRepository)
     {
-         _horairesRepository = HorairesRepository;
+        _horairesRepository = HorairesRepository;
     }
 
     public DtoOutputHoraires Execute(int id)

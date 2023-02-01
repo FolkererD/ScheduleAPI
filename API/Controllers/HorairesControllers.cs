@@ -6,13 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/v1/[controller]")]
 public class HorairesController : ControllerBase
 {
-
     private readonly UseCaseCreateHoraires _useCaseCreateHoraires;
-    private readonly UseCaseFetchAllHoraires _useCaseFetchAllHoraires;
-    private readonly UseCaseUpdateHoraires _useCaseUpdateHoraires;
     private readonly UseCaseDeleteHoraires _useCaseDeleteHoraires;
+    private readonly UseCaseFetchAllHoraires _useCaseFetchAllHoraires;
     private readonly UseCaseFetchByIdHoraires _useCaseFetchByIdHoraires;
     private readonly UseCaseFetchFilterHoraires _UseCaseFetchFilterHoraires;
+    private readonly UseCaseUpdateHoraires _useCaseUpdateHoraires;
 
     public HorairesController(UseCaseCreateHoraires useCaseCreateHoraires,
         UseCaseFetchAllHoraires useCaseFetchAllHoraires,
@@ -54,7 +53,7 @@ public class HorairesController : ControllerBase
         return Ok(_UseCaseFetchFilterHoraires.Execute(
             new DtoInputFilteringHoraires
             {
-                 Id = id
+                Id = id
             }));
     }
 
@@ -78,7 +77,7 @@ public class HorairesController : ControllerBase
     [Route("delete/{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> Delete(int id)
+    public ActionResult<bool> Delete(int id)
     {
         return _useCaseDeleteHoraires.Execute(id);
     }
@@ -87,9 +86,8 @@ public class HorairesController : ControllerBase
     [Route("update")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> Update(DtoInputUpdateHoraires dto)
+    public ActionResult<bool> Update(DtoInputUpdateHoraires dto)
     {
         return _useCaseUpdateHoraires.Execute(dto);
     }
-
 }

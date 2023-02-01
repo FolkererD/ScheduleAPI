@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2ad461c2-6aea-4a28-bf78-a391d9e3887a" name="OVH" url="http://51.255.169.65">
+        <fileTransfer rootFolder="/home/debian/docker/" accessType="SFTP" host="51.255.169.65" port="22" sshConfigId="758b7f1b-4f92-4d67-98a2-7b2a57c3ac07" sshConfig="debian@51.255.169.65:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

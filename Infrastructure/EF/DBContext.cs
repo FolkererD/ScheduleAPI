@@ -1,29 +1,25 @@
-using System.Xml.Schema;
 using Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.EF;
 
-public class DBContext: DbContext
+public class DBContext : DbContext
 {
-
     private readonly IConnectionStringProvider _connectionStringProvider;
-    
-    public DbSet<DbTravails> Travails { get; set; }
-    public DbSet<DbHoraires> Horaires { get; set; }
-    public DbSet<DbPrestations> Prestations { get; set; }
 
     public DBContext(IConnectionStringProvider connectionStringProvider)
     {
         _connectionStringProvider = connectionStringProvider;
     }
-    
+
+    public DbSet<DbTravails> Travails { get; set; }
+    public DbSet<DbHoraires> Horaires { get; set; }
+    public DbSet<DbPrestations> Prestations { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
-        {
             optionsBuilder.UseSqlServer(_connectionStringProvider.GetConnectionString("Db"));
-        }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

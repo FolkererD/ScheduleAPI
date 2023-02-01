@@ -7,9 +7,10 @@ namespace Application.UseCases.Prestations;
 public class UseCaseFetchAllPrestations : IUseCaseQuery<IEnumerable<DtoOutputPrestations>>
 {
     private readonly IPrestationsRepository _prestationsRepository;
+
     public UseCaseFetchAllPrestations(IPrestationsRepository PrestationsRepository)
     {
-         _prestationsRepository = PrestationsRepository;
+        _prestationsRepository = PrestationsRepository;
     }
 
     public IEnumerable<DtoOutputPrestations> Execute()

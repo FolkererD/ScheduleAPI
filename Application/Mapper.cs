@@ -1,6 +1,6 @@
-using Application.UseCases.Travails.Dtos;
 using Application.UseCases.Horaires.Dtos;
 using Application.UseCases.Prestations.Dtos;
+using Application.UseCases.Travails.Dtos;
 using AutoMapper;
 using Domain;
 
@@ -9,12 +9,12 @@ namespace Application;
 public static class Mapper
 {
     private static AutoMapper.Mapper _instance;
-    
+
     public static AutoMapper.Mapper GetInstance()
     {
         return _instance ??= CreateMapper();
     }
-    
+
     private static AutoMapper.Mapper CreateMapper()
     {
         var config = new MapperConfiguration(cfg =>
@@ -30,7 +30,7 @@ public static class Mapper
             cfg.CreateMap<DtoInputUpdateTravails, Travails>();
             cfg.CreateMap<DtoInputCreateTravails, DbTravails>();
             cfg.CreateMap<DtoInputUpdateTravails, DbTravails>();
-            
+
             // Horaires
             cfg.CreateMap<Horaires, DtoInputCreateHoraires>();
             cfg.CreateMap<Horaires, DtoInputUpdateHoraires>();
@@ -42,14 +42,18 @@ public static class Mapper
             cfg.CreateMap<DtoInputUpdateHoraires, Horaires>();
             cfg.CreateMap<DtoInputCreateHoraires, DbHoraires>();
             cfg.CreateMap<DtoInputUpdateHoraires, DbHoraires>();
-            
+
             // Prestations
             cfg.CreateMap<Prestations, DtoInputCreatePrestations>();
             cfg.CreateMap<Prestations, DtoInputUpdatePrestations>();
             cfg.CreateMap<Prestations, DtoOutputPrestations>();
+            cfg.CreateMap<Prestations, DtoOutputNextPrestation>();
+            cfg.CreateMap<Prestations, DtoOutputNextSalary>();
             cfg.CreateMap<Prestations, DbPrestations>();
             cfg.CreateMap<DbPrestations, Prestations>();
             cfg.CreateMap<DbPrestations, DtoOutputPrestations>();
+            cfg.CreateMap<DbPrestations, DtoOutputNextPrestation>();
+            cfg.CreateMap<DbPrestations, DtoOutputNextSalary>();
             cfg.CreateMap<DtoInputCreatePrestations, Prestations>();
             cfg.CreateMap<DtoInputUpdatePrestations, Prestations>();
             cfg.CreateMap<DtoInputCreatePrestations, DbPrestations>();

@@ -7,9 +7,10 @@ namespace Application.UseCases.Travails;
 public class UseCaseFetchByIdTravails : IUseCaseParameterizedQuery<DtoOutputTravails, int>
 {
     private readonly ITravailsRepository _travailsRepository;
+
     public UseCaseFetchByIdTravails(ITravailsRepository TravailsRepository)
     {
-         _travailsRepository = TravailsRepository;
+        _travailsRepository = TravailsRepository;
     }
 
     public DtoOutputTravails Execute(int id)

@@ -6,13 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/v1/[controller]")]
 public class TravailsController : ControllerBase
 {
-
     private readonly UseCaseCreateTravails _useCaseCreateTravails;
-    private readonly UseCaseFetchAllTravails _useCaseFetchAllTravails;
-    private readonly UseCaseUpdateTravails _useCaseUpdateTravails;
     private readonly UseCaseDeleteTravails _useCaseDeleteTravails;
+    private readonly UseCaseFetchAllTravails _useCaseFetchAllTravails;
     private readonly UseCaseFetchByIdTravails _useCaseFetchByIdTravails;
     private readonly UseCaseFetchFilterTravails _UseCaseFetchFilterTravails;
+    private readonly UseCaseUpdateTravails _useCaseUpdateTravails;
 
     public TravailsController(UseCaseCreateTravails useCaseCreateTravails,
         UseCaseFetchAllTravails useCaseFetchAllTravails,
@@ -54,7 +53,7 @@ public class TravailsController : ControllerBase
         return Ok(_UseCaseFetchFilterTravails.Execute(
             new DtoInputFilteringTravails
             {
-                 Id = id
+                Id = id
             }));
     }
 
@@ -78,7 +77,7 @@ public class TravailsController : ControllerBase
     [Route("delete/{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> Delete(int id)
+    public ActionResult<bool> Delete(int id)
     {
         return _useCaseDeleteTravails.Execute(id);
     }
@@ -87,9 +86,8 @@ public class TravailsController : ControllerBase
     [Route("update")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> Update(DtoInputUpdateTravails dto)
+    public ActionResult<bool> Update(DtoInputUpdateTravails dto)
     {
         return _useCaseUpdateTravails.Execute(dto);
     }
-
 }

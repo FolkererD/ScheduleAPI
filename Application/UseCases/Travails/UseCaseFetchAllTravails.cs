@@ -7,9 +7,10 @@ namespace Application.UseCases.Travails;
 public class UseCaseFetchAllTravails : IUseCaseQuery<IEnumerable<DtoOutputTravails>>
 {
     private readonly ITravailsRepository _travailsRepository;
+
     public UseCaseFetchAllTravails(ITravailsRepository TravailsRepository)
     {
-         _travailsRepository = TravailsRepository;
+        _travailsRepository = TravailsRepository;
     }
 
     public IEnumerable<DtoOutputTravails> Execute()

@@ -6,27 +6,32 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/v1/[controller]")]
 public class PrestationsController : ControllerBase
 {
-
     private readonly UseCaseCreatePrestations _useCaseCreatePrestations;
-    private readonly UseCaseFetchAllPrestations _useCaseFetchAllPrestations;
-    private readonly UseCaseUpdatePrestations _useCaseUpdatePrestations;
     private readonly UseCaseDeletePrestations _useCaseDeletePrestations;
+    private readonly UseCaseFetchAllPrestations _useCaseFetchAllPrestations;
     private readonly UseCaseFetchByIdPrestations _useCaseFetchByIdPrestations;
-    private readonly UseCaseFetchFilterPrestations _UseCaseFetchFilterPrestations;
+    private readonly UseCaseFetchFilterPrestations _useCaseFetchFilterPrestations;
+    private readonly UseCaseFetchNextPrestation _useCaseFetchNextPrestation;
+    private readonly UseCaseFetchNextSalary _useCaseFetchNextSalary;
+    private readonly UseCaseUpdatePrestations _useCaseUpdatePrestations;
 
     public PrestationsController(UseCaseCreatePrestations useCaseCreatePrestations,
         UseCaseFetchAllPrestations useCaseFetchAllPrestations,
         UseCaseUpdatePrestations useCaseUpdatePrestations,
         UseCaseDeletePrestations useCaseDeletePrestations,
         UseCaseFetchByIdPrestations useCaseFetchByIdPrestations,
-        UseCaseFetchFilterPrestations UseCaseFetchFilterPrestations)
+        UseCaseFetchFilterPrestations useCaseFetchFilterPrestations,
+        UseCaseFetchNextPrestation useCaseFetchNextPrestation,
+        UseCaseFetchNextSalary useCaseFetchNextSalary)
     {
         _useCaseCreatePrestations = useCaseCreatePrestations;
         _useCaseFetchAllPrestations = useCaseFetchAllPrestations;
         _useCaseUpdatePrestations = useCaseUpdatePrestations;
         _useCaseDeletePrestations = useCaseDeletePrestations;
         _useCaseFetchByIdPrestations = useCaseFetchByIdPrestations;
-        _UseCaseFetchFilterPrestations = UseCaseFetchFilterPrestations;
+        _useCaseFetchFilterPrestations = useCaseFetchFilterPrestations;
+        _useCaseFetchNextPrestation = useCaseFetchNextPrestation;
+        _useCaseFetchNextSalary = useCaseFetchNextSalary;
     }
 
     [HttpPost]
@@ -51,10 +56,10 @@ public class PrestationsController : ControllerBase
     [Route("fetch/all")]
     public ActionResult<IEnumerable<DtoOutputPrestations>> FetchAll([FromQuery] int id)
     {
-        return Ok(_UseCaseFetchFilterPrestations.Execute(
+        return Ok(_useCaseFetchFilterPrestations.Execute(
             new DtoInputFilteringPrestations
             {
-                 Id = id
+                Id = id
             }));
     }
 
@@ -74,11 +79,34 @@ public class PrestationsController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("nextPrestation")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<DtoOutputNextPrestation> FetchNextPrestation()
+    {
+        try
+        {
+            return _useCaseFetchNextPrestation.Execute();
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(e.Message);
+        }
+    }
+
+    [HttpGet]
+    [Route("nextSalary/{jour:int}")]
+    public ActionResult<DtoOutputNextSalary> NextSalary(int jour)
+    {
+        return Ok(_useCaseFetchNextSalary.Execute(jour));
+    }
+
     [HttpDelete]
     [Route("delete/{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> Delete(int id)
+    public ActionResult<bool> Delete(int id)
     {
         return _useCaseDeletePrestations.Execute(id);
     }
@@ -87,9 +115,8 @@ public class PrestationsController : ControllerBase
     [Route("update")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> Update(DtoInputUpdatePrestations dto)
+    public ActionResult<bool> Update(DtoInputUpdatePrestations dto)
     {
         return _useCaseUpdatePrestations.Execute(dto);
     }
-
 }
