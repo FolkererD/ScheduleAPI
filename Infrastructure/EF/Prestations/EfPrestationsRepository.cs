@@ -16,6 +16,18 @@ public class EfPrestationsRepository : IPrestationsRepository
         using var context = _dbContextProvider.NewContext();
         return context.Prestations.ToList();
     }
+    
+    public IEnumerable<DbPrestations> GetNextPrestations()
+    {
+        using var context = _dbContextProvider.NewContext();
+        
+        var prestations = context.Prestations
+            .Where(prestations => prestations.Date >= DateTime.Today)
+            .OrderBy(prestations => prestations.Date)
+            .ToList();
+
+        return prestations;
+    }
 
     public DbPrestations GetById(int id)
     {
@@ -37,6 +49,11 @@ public class EfPrestationsRepository : IPrestationsRepository
         return prestations;
     }
 
+    public decimal CalculSalaire(DbPrestations db)
+    {
+        return db.SalaireNet * _dbContextProvider.NewContext().Horaires.FirstOrDefault(horaires => horaires.Id == db.Horaire)!.Duree;
+    }
+    
     public IEnumerable<DbPrestations> GetNextSalary(int jour)
     {
         using var context = _dbContextProvider.NewContext();

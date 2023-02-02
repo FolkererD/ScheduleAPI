@@ -14,6 +14,7 @@ public class PrestationsController : ControllerBase
     private readonly UseCaseFetchNextPrestation _useCaseFetchNextPrestation;
     private readonly UseCaseFetchNextSalary _useCaseFetchNextSalary;
     private readonly UseCaseUpdatePrestations _useCaseUpdatePrestations;
+    private readonly UseCaseFetchNextPrestations _useCaseFetchNextPrestations;
 
     public PrestationsController(UseCaseCreatePrestations useCaseCreatePrestations,
         UseCaseFetchAllPrestations useCaseFetchAllPrestations,
@@ -22,7 +23,8 @@ public class PrestationsController : ControllerBase
         UseCaseFetchByIdPrestations useCaseFetchByIdPrestations,
         UseCaseFetchFilterPrestations useCaseFetchFilterPrestations,
         UseCaseFetchNextPrestation useCaseFetchNextPrestation,
-        UseCaseFetchNextSalary useCaseFetchNextSalary)
+        UseCaseFetchNextSalary useCaseFetchNextSalary,
+        UseCaseFetchNextPrestations useCaseFetchNextPrestations)
     {
         _useCaseCreatePrestations = useCaseCreatePrestations;
         _useCaseFetchAllPrestations = useCaseFetchAllPrestations;
@@ -32,14 +34,15 @@ public class PrestationsController : ControllerBase
         _useCaseFetchFilterPrestations = useCaseFetchFilterPrestations;
         _useCaseFetchNextPrestation = useCaseFetchNextPrestation;
         _useCaseFetchNextSalary = useCaseFetchNextSalary;
+        _useCaseFetchNextPrestations = useCaseFetchNextPrestations;
     }
 
     [HttpPost]
     [Route("create")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputPrestations> Create(DtoInputCreatePrestations dto)
-    {
-        return Ok(_useCaseCreatePrestations.Execute(dto));
+    {        
+        return Ok(_useCaseCreatePrestations.Execute(dto.Prestation));
     }
 
 /*  // SANS FILTRE 
@@ -50,6 +53,13 @@ public class PrestationsController : ControllerBase
         return Ok(_useCaseFetchAllPrestations.Execute());
     }
 */
+
+    [HttpGet]
+    [Route("nextPrestations")]
+    public ActionResult<IEnumerable<DtoOutputPrestations>> NextPrestations()
+    {
+        return Ok(_useCaseFetchNextPrestations.Execute());
+    }
 
     // En ajoutant un numero dans ID, il n'affiche que cet ID là. A modifier avec d'autres filtres
     [HttpGet]

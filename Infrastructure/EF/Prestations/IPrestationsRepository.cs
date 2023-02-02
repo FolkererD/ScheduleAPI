@@ -3,6 +3,7 @@ namespace Domain;
 public interface IPrestationsRepository
 {
     IEnumerable<DbPrestations> FetchAll();
+    IEnumerable<DbPrestations> GetNextPrestations();
     DbPrestations GetById(int id);
 
     DbPrestations GetNextPrestation();

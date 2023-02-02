@@ -49,6 +49,7 @@ builder.Services.AddScoped<UseCaseCreatePrestations>();
 builder.Services.AddScoped<UseCaseUpdatePrestations>();
 builder.Services.AddScoped<UseCaseDeletePrestations>();
 builder.Services.AddScoped<UseCaseFetchAllPrestations>();
+builder.Services.AddScoped<UseCaseFetchNextPrestations>();
 builder.Services.AddScoped<UseCaseFetchNextPrestation>();
 builder.Services.AddScoped<UseCaseFetchNextSalary>();
 builder.Services.AddScoped<UseCaseFetchByIdPrestations>();
@@ -58,9 +59,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("Dev", policyBuilder =>
     {
+        /*
         policyBuilder.WithOrigins("http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod();
+        */
     });
 });
 
