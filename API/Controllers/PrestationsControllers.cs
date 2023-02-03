@@ -45,32 +45,19 @@ public class PrestationsController : ControllerBase
         return Ok(_useCaseCreatePrestations.Execute(dto.Prestation));
     }
 
-/*  // SANS FILTRE 
     [HttpGet]
     [Route("fetch/all")]
     public ActionResult<IEnumerable<DtoOutputPrestations>> FetchAll()
     {
         return Ok(_useCaseFetchAllPrestations.Execute());
     }
-*/
+
 
     [HttpGet]
     [Route("nextPrestations")]
     public ActionResult<IEnumerable<DtoOutputPrestations>> NextPrestations()
     {
         return Ok(_useCaseFetchNextPrestations.Execute());
-    }
-
-    // En ajoutant un numero dans ID, il n'affiche que cet ID là. A modifier avec d'autres filtres
-    [HttpGet]
-    [Route("fetch/all")]
-    public ActionResult<IEnumerable<DtoOutputPrestations>> FetchAll([FromQuery] int id)
-    {
-        return Ok(_useCaseFetchFilterPrestations.Execute(
-            new DtoInputFilteringPrestations
-            {
-                Id = id
-            }));
     }
 
     [HttpGet]

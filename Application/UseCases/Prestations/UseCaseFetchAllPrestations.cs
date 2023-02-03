@@ -24,6 +24,8 @@ public class UseCaseFetchAllPrestations : IUseCaseQuery<IEnumerable<DtoOutputPre
 
         foreach (var prestation in prestations)
         {
+            Console.WriteLine(prestation.Horaire);
+        
             dtoOutputPrestations.Add(new DtoOutputPrestations
             {
                 Id = prestation.Id,
