@@ -29,9 +29,7 @@ public class UseCaseCreatePrestations : IUseCaseWriter<DtoOutputPrestations, Dto
         prestations.Date = DateTime.Parse(input.Date);
         prestations.Travail = 1;
 
-        prestations.SalaireNet = _horairesRepository.GetById(prestations.Horaire)!.Duree
-                                 *
-                                 _travailsRepository.GetById(prestations.Travail)!.SalaireNet;
+        prestations.SalaireNet = _travailsRepository.GetById(prestations.Travail)!.SalaireNet;
 
         var dbPrestations = _prestationsRepository.Create(prestations);
         return Mapper.GetInstance().Map<DtoOutputPrestations>(dbPrestations);
