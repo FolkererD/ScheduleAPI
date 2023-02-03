@@ -14,7 +14,7 @@ public class EfPrestationsRepository : IPrestationsRepository
     public IEnumerable<DbPrestations> FetchAll()
     {
         using var context = _dbContextProvider.NewContext();
-        return context.Prestations.ToList();
+        return context.Prestations.OrderBy(prestations => prestations.Date).ToList();
     }
     
     public IEnumerable<DbPrestations> GetNextPrestations()
