@@ -86,8 +86,13 @@ public class EfPrestationsRepository : IPrestationsRepository
             if (jour <= 13)
             {
                 premierJour = 16;
-                dernierJour = 31;
-                mois = 1;
+                if(DateTime.Today.Month == 1 || DateTime.Today.Month == 3 || DateTime.Today.Month == 5 || DateTime.Today.Month == 7 || DateTime.Today.Month == 8 || DateTime.Today.Month == 10 || DateTime.Today.Month == 12)
+                    dernierJour = 31;
+                else if(DateTime.Today.Month == 4 || DateTime.Today.Month == 6 || DateTime.Today.Month == 9 || DateTime.Today.Month == 11)
+                    dernierJour = 30;
+                else if(DateTime.Today.Month == 2)
+                    dernierJour = 28;
+                mois = 0;
             }
             else
             {

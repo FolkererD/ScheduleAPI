@@ -72,7 +72,7 @@ public class TravailsController : ControllerBase
             return NotFound(e.Message);
         }
     }
-
+/*
     [HttpDelete]
     [Route("delete/{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -81,7 +81,7 @@ public class TravailsController : ControllerBase
     {
         return _useCaseDeleteTravails.Execute(id);
     }
-
+*/
     [HttpPut]
     [Route("update")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
